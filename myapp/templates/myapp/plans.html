@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Membership Plans - Gym Management{% endblock %}
+
+{% block content %}
+    <h2>Our Membership Plans</h2>
+    <ul>
+        {% for plan in plans %}
+            <li>
+                <h3>{{ plan.title }}</h3>
+                <p>{{ plan.description }}</p>
+                <p>Price: ${{ plan.price }}</p>
+                <p>Perks: {{ plan.perks }}</p>
+                <a href="{% url 'book_class' plan.id %}" class="button">Sign Up</a>
+            </li>
+        {% empty %}
+            <p>No membership plans available.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

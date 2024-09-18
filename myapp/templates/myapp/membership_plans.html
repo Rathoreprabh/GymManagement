@@ -1,0 +1,23 @@
+<!-- templates/membership_plans.html -->
+{% extends 'base.html' %}
+
+{% block title %}Membership Plans{% endblock %}
+
+{% block content %}
+<h2 class="text-center mt-5">Membership Plans</h2>
+<div class="row justify-content-center">
+    {% for plan in plans %}
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">{{ plan.name }}</h5>
+                <p class="card-text">{{ plan.description }}</p>
+                <p class="card-text"><strong>Price:</strong> ${{ plan.price }}</p>
+                <p class="card-text"><strong>Duration:</strong> {{ plan.duration }} months</p>
+                <a href="#" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

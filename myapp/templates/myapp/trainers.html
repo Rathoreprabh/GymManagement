@@ -1,0 +1,21 @@
+<!-- templates/trainers.html -->
+{% extends 'base.html' %}
+
+{% block title %}Trainers{% endblock %}
+
+{% block content %}
+<h2 class="text-center mt-5">Our Trainers</h2>
+<div class="row justify-content-center">
+    {% for trainer in trainers %}
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">{{ trainer.name }}</h5>
+                <p class="card-text"><strong>Specialization:</strong> {{ trainer.specialization }}</p>
+                <p class="card-text"><strong>Availability:</strong> {{ trainer.availability }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

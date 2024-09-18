@@ -1,0 +1,13 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to Gym Management System</h1>
+    <p class="lead">Manage your membership plans, services, trainers, and bookings easily.</p>
+    <hr class="my-4">
+    <a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button">Join Now</a>
+</div>
+{% endblock %}
